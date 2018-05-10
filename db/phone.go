@@ -93,7 +93,7 @@ func (db *DB) FindPhone(number string) (*Phone, error) {
 
 func (db *DB) UpdatePhone(p *Phone) error {
 	statement := `UPDATE phone_numbers SET value=$2 WHERE id=$`
-	_, err := db.db.Exec(statement.p.ID, p.Number)
+	_, err := db.db.Exec(statement, p.ID, p.Number)
 	return err
 }
 
