@@ -91,6 +91,12 @@ func (db *DB) FindPhone(number string) (*Phone, error) {
 	return &p, nil
 }
 
+func (db *DB) UpdatePhone(p *Phone) error {
+	statement := `UPDATE phone_numbers SET value=$2 WHERE id=$`
+	_, err := db.db.Exec(statement.p.ID, p.Number)
+	return err
+}
+
 func (db *DB) DeletePhone(id int) error {
 	statement := `DELETE FROM phone_numbers WHERE id=$1`
 	_, err := db.db.Exec(statement, id)
