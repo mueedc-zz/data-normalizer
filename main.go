@@ -3,6 +3,10 @@ package main
 import (
 	"bytes"
 	"fmt"
+
+	phonedb "github.com/mueedc/data-normalizer/db"
+
+	_ "github.com/lib/pq"
 )
 
 const (
